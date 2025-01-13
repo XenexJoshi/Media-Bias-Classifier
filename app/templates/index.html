@@ -57,7 +57,7 @@
 
         if (response.ok) {
           const result = await response.json();
-          resultSpace.textContent = `Classification: ${result.prediction}-leaning`;
+          resultSpace.textContent = `${result.prediction}-leaning`;
         } else {
           alert(`Failed to upload text data. Status: ${response.status}`);
         }
