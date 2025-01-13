@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wdth,wght@0,62.5..100,271;1,62.5..100,271&display=swap');
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #05152b;
+  font-family: 'Noto Serif';
+}
+
+#outer::before {
+  content: '';
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(rgb(217, 217, 23), rgb(176, 23, 23));
+  border-radius: 50%;
+  transform: translate(-500px, 0px);
+}
+
+#outer::after {
+  content: '';
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background: linear-gradient(rgb(215, 47, 47), rgb(41, 33, 130));
+  border-radius: 50%;
+  transform: translate(520px, -200px);
+}
+
+#inner::before {
+  content: '';
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(rgb(36, 27, 218), rgb(46, 176, 23));
+  border-radius: 50%;
+  transform: translate(280px, 290px);
+}
+
+section::ater {
+  content: '';
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background: linear-gradient(rgb(215, 47, 47), rgb(41, 33, 130));
+  border-radius: 50%;
+  transform: translate(-540px, 180px);
+}
+
+h1 {
+  color: aliceblue;
+  justify-content: start;
+  align-self: center;
+  margin-bottom: 10;
+  font-size: 40px;
+  font-weight: bold;
+  z-index: -1;
+}
+
+h3 {
+  color: aliceblue;
+  justify-content: start;
+  align-self: center;
+  margin-bottom: 10px;
+  font-size: 18px;
+  margin-left: 380px;
+  margin-right: 380px;
+  font-style: italic;
+
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 720px;
+  height: 480px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+}
+
+#headingInput {
+  justify-self: center;
+  align-self: center;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  font-family: 'Noto Serif';
+  font-size: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  padding: 2px;
+}
+
+#textInput {
+  justify-self: center;
+  align-self: center;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  font-family: 'Noto Serif';
+  font-size: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  padding: 2px;
+}
+
+#submitButton {
+  margin-left: 260px;
+  width: 120px;
+  height: 30px;
+  font-size: 14px;
+  border-radius: 14px;
+  border-width: 0px;
+  background-color: rgb(8, 158, 8);
+  color: black;
+}
+
+h2 {
+  color: aliceblue;
+  justify-content: start;
+  align-self: center;
+  font-size: 18px;
+  margin-left: 380px;
+  margin-right: 380px;
+}
+
+h4 {
+  color: aliceblue;
+  justify-content: start;
+  align-self: center;
+  font-size: 14px;
+  margin-left: 350px;
+  margin-bottom: 20px;
+}
