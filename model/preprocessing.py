@@ -13,6 +13,7 @@ def preprocess_text(text):
   translator = str.maketrans('', '', string.punctuation)
   tokens = [s.translate(translator) for s in tokens]
   tokens = [s for s in tokens if s.isalpha()]
+  tokens = [s.lower() for s in tokens]
   filter = set(stopwords.words('english'))
   tokens = [s for s in tokens if not s in filter]
   tokens = [s for s in tokens if len(s) > 2]

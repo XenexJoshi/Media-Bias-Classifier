@@ -1,0 +1,65 @@
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width = device-width, initial-scale = 1.0'>
+  <link rel='stylesheet' type='text/css' href="{{ url_for('static', filename = 'styles.css')}}">
+  <title> Media Bias Classifier</title>
+</head>
+
+<body>
+  <div className=container>
+    <section className='cloud'>
+
+    </section>
+    <div className='inputSection'>
+      <input type='text' id='headingInput'>
+      <input type='text' id='textInput'>
+      <button id='submitButton'> Predict Bias </button>
+    </div>
+
+    <div className='resultBox'>
+      <h2> Prediction: </h2>
+      <h3 id="resultSection"> </h3>
+    </div>
+  </div>
+
+  <script>
+    let heading;
+    let content;
+
+    const headingSpace = document.getElementById('headingInput');
+    const textSpace = document.getElementById('textInput');
+    const submitButton = document.getElementById('submitButton');
+    const resultSpace = document.getElementById('resultSection');
+
+    submitButton.addEventListener('click', async () => {
+      heading = headingSpace.value.trim();
+      content = textSpace.value.trim();
+
+      const formData = new FormData();
+      formData.append('heading', heading);
+      formData.append('content', content);
+
+      try {
+        const response = await fetch('http://127.0.0.1:5000/', {
+          method: 'POST',
+          body: formData,
+        });
+
+        if (response.ok) {
+          const result = await response.json();
+          resultSpace.textContent = `${result.prediction}`;
+        } else {
+          alert(`Failed to upload text data. Status: ${response.status}`);
+        }
+      } catch (e) {
+        console.error(e);
+      }
+      headingSpace.value = "";
+      textSpace.value = "";
+    })
+  </script>
+</body>
+
+</html>
